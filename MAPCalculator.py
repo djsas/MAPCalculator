@@ -14,20 +14,16 @@ class MAPCalculator:
 	def calculateAP(self, key):
 		print self.getCalculateAP(key)
 	def getCalculateAP(self, key):
-		out = ""
-		ansnum = 0.0
 		num = 0.0
-		sum = 0.0
-		last_ap = 0.0
+		ansnum = 0.0
+		sum_p = 0.0
 		for x in self.results[key]:
 			num += 1
 			if x in self.corrects:
 				ansnum += 1
 				p = ansnum / num
-				sum += p
-				last_ap = sum / num
-			out += "%s\n" % last_ap
-		return out
+				sum_p += p
+		return sum_p / ansnum
 	def calculateMAP(self):
 		print self.getCalculateMAP()
 	def getCalculateMAP(self):
